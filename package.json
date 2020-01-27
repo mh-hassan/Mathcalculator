@@ -1,0 +1,16 @@
+{
+  "name": "mathcalculator",
+  "version": "1.0.0",
+  "description": "This is math calculator exsample cordova plugin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Math",
+    "Calculator",
+    "ionic"
+  ],
+  "author": "mohammed hamed",
+  "license": "ISC"
+}
