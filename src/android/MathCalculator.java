@@ -1,8 +1,6 @@
-package cordova-plugin-mathcalculator;
-
+package cordova.plugin.mathcalculator;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -31,58 +29,39 @@ public class MathCalculator extends CordovaPlugin {
     }
 
  
+    private void add(JSONArray args, CallbackContext callback) {
+        if(args != null) {
+            try {
+                int p1 = Integer.parseInt(args.getJSONObject(0).getString("param1"));
+                int p2 = Integer.parseInt(args.getJSONObject(0).getString("param2"));
 
-
-    private void add(JSONArray args, CallbackContext callback)
-    {
-
-        if(args !=null)
-        {
-          try{
-
-              int p1=integer.paseInt(args.getJSONObject(0).getString("param1"));
-              int p2=integer.paseInt(args.getJSONObject(0).getString("param2"));
-
-              callback.success(""+ (p1+p2))
-
-
-             }catch(Exsption ex)
-             {
-             callback.error("plase donot pass null value")
-             }
+                callback.success(""+ (p1+p2) );
+            }
+            catch(Exception e) {
+                callback.error("Something went wrong " + e);
+            }
         }
-        else{
-             callback.error("plase donot pass null value")
-           }
-
+        else {
+            callback.error("Something went wrong");
+        }
     }
 
+    private void substract(JSONArray args, CallbackContext callback) {
+        if(args != null) {
+            try {
+                int p1 = Integer.parseInt(args.getJSONObject(0).getString("param1"));
+                int p2 = Integer.parseInt(args.getJSONObject(0).getString("param2"));
 
-
-
-    private void     exec(success, error, 'MathCalculator', 'substract' ,  [arg0]);
-    (JSONArray args, CallbackContext callback)
-    {
-
-        if(args !=null)
-        {
-          try{
-
-              int p1=integer.paseInt(args.getJSONObject(0).getString("param1"));
-              int p2=integer.paseInt(args.getJSONObject(0).getString("param2"));
-
-              callback.success(""+ (p1-p2))
-
-
-             }catch(Exsption ex)
-             {
-             callback.error("plase donot pass null value")
-             }
+                callback.success(""+ (p1-p2) );
+            }
+            catch(Exception e) {
+                callback.error("Something went wrong " + e);
+            }
         }
-        else{
-             callback.error("plase donot pass null value")
-           }
-
+        else {
+            callback.error("Something went wrong");
+        }
     }
+
     
 }
